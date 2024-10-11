@@ -1,5 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Recipe from "./Recipe";
 
-export default () => (
-  <div>Test</div>
-);
+export default () => {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    fetch("/recipes")
+      .then((res) => {
+        if (res.ok) return res.json();
+        throw new Error("Network response was not ok.");
+      })
+      .then((res) => setRecipes(res))
+  }, []);
+
+  return <>{recipes.map((recipe) => (
+    <Recipe key={recipe.id} title={recipe.title} imageUrl={recipe.image_url} />
+  ))}</>
+}

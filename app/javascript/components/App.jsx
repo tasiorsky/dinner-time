@@ -1,4 +1,4 @@
 import React from "react";
-import Recipes from "./Recipes";
+import Routes from "../routes";
 
-export default () => <Recipes />
+export default props => <>{Routes}</>;

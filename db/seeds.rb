@@ -12,7 +12,11 @@ file = File.open("./vendor/recipes-en.json")
 recipes = JSON.parse(file.read)
 recipes.each do |recipe|
   attrs = recipe.except("ingredients", "image")
-  attrs["image_url"] = recipe["image"]
+
+  query = URI(recipe["image"]).query
+  url = query ? CGI.parse(query)["url"].first : recipe["image"]
+  attrs["image_url"] = url
+
   new_recipe = Recipe.create!(attrs)
 
   ingredients = recipe["ingredients"].map { |i| { name: i, recipe_id: new_recipe.id } }
