@@ -53,6 +53,7 @@ export default () => {
           prepTime={recipe.prep_time}
           category={recipe.category}
           ingredients={recipe.ingredients}
+          input={ingredients}
         />
       ))}
     </div>
