@@ -3,3 +3,28 @@
 .text-green {
   color: green;
 }
+
+input {
+  margin-bottom: 30px;
+}
+
+.card {
+  margin-bottom: 10px;
+}
+
+.card-img {
+  display: flex;
+  justify-content: center;
+
+  img {
+    max-height: 200px;
+    width: auto;
+    object-fit: cover;
+  }
+}
+
+.pagination {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}

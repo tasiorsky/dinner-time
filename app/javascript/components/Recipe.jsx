@@ -1,10 +1,10 @@
 import React from "react";
 
 export default (props) => {
-  const ingredientClass = props.input
-
-  return <div className="card col-md-6">
-    <img src={props.imageUrl} className="card-img-top" alt={props.title} />
+  return <div className="card col-md-4">
+    <div className="card-img">
+      <img src={props.imageUrl} className="card-img-top" alt={props.title} />
+    </div>
     <div className="card-body">
       <h5 className="card-title">{props.title}</h5>
       <div className="card-text">
@@ -18,7 +18,7 @@ export default (props) => {
           {props.ingredients && props.ingredients.map((ingredient) => {
             let presentIngredients = props.input.filter(input => ingredient.name.match(input))
             let ingredientClass = presentIngredients.length > 0 ? "fw-bold text-green" : ""
-            return <li className={ingredientClass}>{ingredient.name}</li>
+            return <li key={ingredient.id} className={ingredientClass}>{ingredient.name}</li>
           })}
         </ul>
       </div>
