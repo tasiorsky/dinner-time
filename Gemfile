@@ -63,4 +63,6 @@ end
 
 gem "active_model_serializers", "~> 0.10.14"
 
-gem "dockerfile-rails", ">= 1.6", :group => :development
+gem "dockerfile-rails", ">= 1.6", group: :development
+
+gem "factory_bot_rails", "~> 6.4"
