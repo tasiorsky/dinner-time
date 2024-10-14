@@ -62,3 +62,5 @@ group :test do
 end
 
 gem "active_model_serializers", "~> 0.10.14"
+
+gem "dockerfile-rails", ">= 1.6", :group => :development
