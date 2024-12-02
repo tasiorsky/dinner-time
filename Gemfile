@@ -61,7 +61,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "active_model_serializers", "~> 0.10.14"
+gem "active_model_serializers", "~> 0.10.15"
 
 gem "dockerfile-rails", ">= 1.6", group: :development
 
